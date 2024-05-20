@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0c0c0c;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            margin-top: 20px;
+            font-family:Arial, Helvetica, sans-serif
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 2pm;
+            border-color: #ffffff;
+        }
+
+        textarea {
+            width: 80%;
+            min-height: 200px;
+            padding: 10px;
+            border: 2px solid #fcf9f9;
+            border-radius: 5px;
+            resize: vertical;
+            font-size: 16px;
+            background-color: #0c0c0c;
+            color: white;
+        }
+
+        input[type="submit"] {
+            background-color: #2c542d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .analysis-container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f4f6f8;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        .visualization {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Entities Recognizer in Text</h1>
+    <div class="analysis-container">
+        <form action="/analyze" method="post">
+            <textarea name="text" rows="10" placeholder="Enter your text here"></textarea><br>
+            <input type="submit" value="Analyze">
+        </form>
+        
+        {% if text %}
+            <h2>Input Text:</h2>
+            <p>{{ text }}</p>
+        {% endif %}
+        
+        {% if visualization %}
+            <div class="visualization">
+                <h2>Named Entity Visualization</h2>
+                {{ visualization | safe }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
