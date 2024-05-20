@@ -12,11 +12,8 @@ This project is a web-based Named Entity Recognition (NER) tool built with Flask
 - Uses spaCy for NER processing.
 - Simple and clean user interface.
 
-### Installation Steps
-
 1. Clone the repository:
    ```bash
-  https://github.com/FazalHaq6559/NLP-Information-Extraction-NER.git
+   git clone https://github.com/<your-username>/NER-Tool.git
    cd NER-Tool
-
 
